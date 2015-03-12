@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!--Basic Guide to HTML 
+
+(may be fucked in gedit... no idea why..)
+
+0- make comments using the <!-> tags
+1- things inside <> are called tags
+2- tags open <tag> and close </tag>
+3- tags nest so must be closed in order
+4- place <!DOCTYPE html> at the start of each file
+5- place <html> on the 2nd line and </html> at the end of the file
+6- there is a <head> and a <body> to each html file
+7- the <head> tag often contains the <title>
+8- the <body> tag contains the content
+9- the <p> tag is used to start each new paragraph
+10- the <h1> through to <h6> tags are used to create headings (smaller number, larger text)
+11- the <a> tag can link to another webpage, <a href=page-url>...</a>
+12- the <img> tag can add a picture, <img src="img-url" />
+13- bulleted list formed inside the <ul> tag with <li> around each element in the list
+14- ordered lists use the <ol> tag with <li> round each element
+
+eg.
+
+-->
+
+<html>
+	<head>
+		<title>Cheatsheet</title>
+	</head>
+	<body>
+		<h1>Page Title</h1>
+		<h3>Title 1</h3>
+		<p>Paragraph 1 Text AaBb click <a href=https://to/>here</a>
+			<ol>
+				<li>List one
+					<ul>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+				</li>
+				<li>List two
+					<ul>
+						<li>1</li>
+						<li>2</li>
+					</ul>
+				</li>
+			</ol>
+		</p>
+		<p>Paragraph 2 Text AaBb <img src="http://website.com/image-1.jpg" /> CcDd</p>
+		<h3>Title 2</h3>
+		<p>Paragraph 3 Text AaBb <a href=https://website.com> <img src="http://website.com/image-2.jpg" /></a> CcDd</p>
+	</body>
+</html>
