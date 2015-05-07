@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>YouTube</title>
+	<link rel="shortcut icon" href="favicon.ico" />
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		
+		/* Main Wrapper
+		-----------------------------------------------------------------------------*/
+		.wrapper {
+			width: 100%;
+		}
+		
+		
+		/* Logo
+		-----------------------------------------------------------------------------*/
+		.logo {
+			/* Set margin to 50% from top, and 50% from left
+			(subtracting 50% of the width and 100% of the height of the image using transform) */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -100%);
+		}
+		
+		
+		/* Search Area
+		-----------------------------------------------------------------------------*/
+		.searcharea {
+			/* Set margin to 50% from top, and 50% from left
+			(subtracting 50% of the width and 0% of the height of the image using transform) */
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}
+	</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+	<div class="logo">
+		<img src="logo.png" width="450px" height="280px" />
+	</div><!-- .logo -->
+
+	<!-- HTML for SEARCH BAR -->
+	<div class="searcharea">
+		<form id="searchbox" method="get" action="https://www.youtube.com/results">
+		        <input type="text" class="tftextinput" name="search_query" size="60" maxlength="120"><input type="submit" value="Search" class="tfbutton">
+		</form>
+	</div><!-- .searcharea -->
+
+</div><!-- .wrapper -->
+</body>
+
+</html>
