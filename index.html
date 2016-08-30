@@ -1,124 +1,372 @@
 <!DOCTYPE html>
-<html>
 <head>
-	<meta charset="utf-8" />
-	<title>Gelrii</title>
+<meta charset="utf-8"/>
+<title>Gelrii</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-	<style>
-		* {
-			margin: 0;
-			padding: 0;	
-		}
-		
-		/* Main Wrapper
------------------------------------------------------------------------------*/
-		.wrapper {
-			width: 100%;
-			height: 100%;
-			background-color: #262626;
-		}
-		
-		
-		/* Image
------------------------------------------------------------------------------*/
-		.image {
-			position: relative;
-			left: 50%;
-			transform: translate(-50%, 0%);
-		}
+<style type="text/css">
+@import url("OpenSans_Regular/stylesheet.css");
 
-		/* Main
------------------------------------------------------------------------------*/
-		.main {
-			font-family: courier new;
-			color: #FFFFFF;
-			text-align: center;
-			font-weight: 500;
-			font-size: 20pt;
-			position: relative;
-			max-width: 1200px;
-			left: 50%;
-			transform: translate(-600px);
-			background-color: #2B2B2B;
-		}
-	</style>
-	
+@font-face {
+  font-family: OpenSans;
+  src: local("OpenSans"),
+       url('OpenSans-Regular.ttf') format('truetype'));
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+	background-color: rgba(19,15,15,1);
+	font-family: "OpenSans Regular";
+	overflow-x: hidden;
+	max-width: 3840px;
+	max-height: 2160px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+}
+#boxOuter {
+	height: 800px;
+	width: 555px;
+	z-index: 50;
+	position: relative;
+	float: left;
+}
+#SlideFrameLeft {
+	height: 800px;
+	width: 565px;
+	z-index: 10;
+	position: relative;
+	float: left;
+	overflow: hidden;
+}
+#SlideLeft {
+	height: 4800px;
+	width: 565px;
+	z-index: 10;
+	position: absolute;
+	top: 0px;
+}
+#SlideFrameRight {
+	height: 800px;
+	width: 565px;
+	z-index: 10;
+	position: relative;
+	float: right;
+	overflow: hidden;
+}
+#SlideRight {
+	height: 4800px;
+	width: 565px;
+	z-index: 10;
+	position: absolute;
+}
+#box {
+	height: 328px;
+	width: 555px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: rgba(197,194,167,0.0);
+	background-image: url(icons.png);
+	padding-top: 5px;
+	z-index: 10;
+	position: relative;
+	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+	background-position: 0px -117px;
+}
+#boxHead {
+	font-size: 30px;
+	color: rgba(176,172,138,1);
+	padding-top: 10px;
+	padding-left: 30px;
+	width: 525px;
+	margin-top: 140px;
+	height: 55px;
+	text-shadow: 2px 2px 2px rgba(41, 41, 41, 1);
+	cursor: default;
+}
+#boxContent {
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 22px;
+	color: rgba(255,255,255,1);
+	padding-top: 10px;
+	padding-left: 30px;
+	padding-bottom: 20px;
+	padding-right: 20px;
+}
+#background {
+	height: 100%;
+	width: 100%;
+	background-image: url(36.jpg);
+	background-size: cover;
+	margin-right: 0px;
+	margin-left: 0px;
+	position: absolute;
+	border-top-width: 2px;
+	border-bottom-width: 2px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: rgba(185,183,149,1);
+	border-bottom-color: rgba(185,183,149,1);
+	background-position: center center;
+	overflow: hidden;
+}
+#wrapper {
+	width: 1130px;
+	margin-right: auto;
+	margin-left: auto;
+}
+a {
+	color: rgba(255,204,102,1);
+	text-decoration: none;
+}
+a:hover {
+	color: rgba(255,222,155,1);
+	text-decoration: underline;
+}
+#ButtonNext {
+	margin-left: 30px;
+	font-size: 22px;
+	color: rgba(255,255,255,1);
+	padding-left: 20px;
+	background-image: url(icons.png);
+	background-repeat: no-repeat;
+	margin-top: 10px;
+	line-height: 58px;
+	width: 330px;
+	cursor: pointer;
+	margin-bottom: 40px;
+	box-shadow: 3px 3px 5px 0px rgba(0,0,0,0.75);
+	bottom: 0px;
+	position: absolute;
+	height: 58px;
+	background-position: -0px -58px;
+}
+#ButtonNext:hover {
+	color: rgba(245,241,188,1);
+	box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.75);
+	background-image: url(icons.png);
+	background-repeat: no-repeat;
+	margin-bottom: 39px;
+	background-position: -0px -0px;
+}
+#ButtonPrev {
+	font-size: 22px;
+	width: 56px;
+	cursor: pointer;
+	position: absolute;
+	height: 56px;
+	bottom: -80px;
+	left: 30px;
+	background-image: url(icons.png);
+	background-position: -350px -0px;
+	opacity: 0.4;
+}
+#ButtonPrev:hover {
+	bottom: -78px;
+	opacity: 0.5;
+}
+#logo{
+	background-image: url(favicon.png);
+	background-position: -180px -50px;
+	background-repeat: no-repeat;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0px;
+	z-index: 0;
+	display: none;
+}
+#bottomlogo {
+	background-image: url(icons.png);
+	position: absolute;
+	height: 81px;
+	width: 148px;
+	z-index: 0;
+	background-position: -406px -0px;
+	background-repeat: no-repeat;
+	bottom: 5px;
+	right: 125px;
+}
+.on {
+	color: rgba(255,255,255,1);
+	background-color: rgba(97,82,63,1);
+}
+</style>
+</head>
+
 <body>
-<div class="wrapper">
-	<div class="main">
-		<p><br /><h1>
-		Gelrii.com
-		</h1></p>
-		<br /><br /><br />
-		<p><br />
-		<a href=https://github.com/gelrii>GitHub</a>
-		</p><br /><p>
-		<a href=http://gelrii.github.io/construction>CV</a>
-		</p><br /><p>
-		<a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x4F48F75077E4FCF4">Contact</a>
-		</p><br /><p>
-		<a href="http://gelrii.com/mumble.html">Mumble</a>
-		</p>
-		<table border="0" align="center" cellpadding="0" cellspacing="0">
-		<tr><td width="1200" height="1200" align="center" valign="middle">
-		</td></tr>
-		</table>
-	</div>
+<div style="color:white;width:600px;text:center;position:absolute;top:0;margin-left:auto;margin-right:auto;">
+<noscript>Thankyou for not using javascript! However it makes my website look look better so...</noscript>
 </div>
-</body>
-</html>
+<div id="background">
+<div id="wrapper">
+<div id="bottomlogo">
+</div>
+<div id="SlideFrameLeft">
+<div id="SlideLeft">
 
-<!--                                   _o=<&&&&>=vo__
-                                     ?/$="'"  """^=<&&R$~\
-                                   .&?/'              `""$$,
-                                 ,/?/'       /-"^\.   .-=~\T,
-                               ,/?/'        /\|6?`|  |<<q- ,??
-                             ./?/'          `\??dp'  `$??,/|,i\.
-                            ,*??              `"       ""' `b'\\$$&&\.
-                           ,Td'                             `&:`H' "&7, .__
-               ._.         H||            .                  `*\H,  `&$$S:7|
-              |????        M|,         ,--&|\                  `&?b   ""://'
-     .,o--vo\,PJ'H|,       H|L         ``'"H?b                 ,-`?\   ,&&'
-    ,P?-""^==:=' ||b       `L9,            `H`&,               |?:!|| ,P&
-    `b?\          9/?       ??H,            |L *b.,'"\          :$:&  H]'
-     `b$\o.        */\.      ??*b.           9.  `\\:(|     .,/$6d'  |\T
-       ``\Z\\       `\7b.    ,To?&b.          \(\:-.-S:-~=-"'',P     MJ'
-          `\?*b       ?&&\.  d\|<_ `\o_       `&&M\:?-+#:>\.|,&'    |LT
-            `\?\\      ``\?\d|/`4RM|:~:$=v\.    `$k<MR&MF$$?&J'     HJ'
-              `\?\.       `\b/$$$&v!-?&<?::P\\    `"^-^-?b=Sd'     |\T
-  _o~=~$&$>==v\.??\,         `\d `\$$'9P':-?>:"=\ooo/=/$$~?$\     ,R/
-./$?~^'"""""`"\\&&< ?b               "`~$P:c: /v==v,#::?<<&:'T|   d$/'
-:.             ""=o/&.                ,P    o&Z'`'.##| |MH\|| ,$$'
-=:$H&=\.           `"b?b.             .&'    96*.-v.:?/`\==$&?$&*'
-    `^$?\.           `*&*\\          ,P       ?~-~'      |$$S>'
-       `\7b           ,T/\&&\.      d?                    |T'
-         \/b         .&J'  `\>     d'                      T,
-          &`L        /||          ?|                        ?,
-          ||9       J\T           H                          ?,
-           H||     ||/           ||                           9,
-           ||M     PJ'           ||                           `H
-            bT,   ||T            ||                            ||
-            T/L   H||            `b                             M
-             &T,  M|              9,                            9
-             `L9, M|              `&.                           |
-              `?*,9||              `b                           d
-               `\?(|H.              `b                          ?b
-                `*\ `&.              `\.                       J*|b
-                  `\o/\.              `&.                     ,P 9/L
-                     9:&.              `9\                   ??  `H9.
-                      *?9\               `b                .&'    |/|
-                       `|`\.              `L             ./'      `|H
-                       d\/qZbo.            M          .,='        ,|T
-              ./~&$$?=??/' `"=H$|          H       .o=''          J\|
-             ,*/''  `\?        `'        ./?ov=="*b9,            ,$P
-            ,Td                         ,$$'`'    ?|M           ,$/
-            J||                       ,$?/         M||         ?$/
-            M||         |>\.     ._,~9$''          T||        d'M.
-            9`|         `Hi:R&:&&6&="'           ./$J|       `^"\Z\.
-            ||M          `=Z\:""                 H|T"            `&H&>v_
-             bT,    ..   v,?|\                   M||               .:Z|&\.
-             ||H  _oZ??v~>`d9H|                  `?*\              ?$ `#'H
-              9/L||1+ "HH  .$/                    `bZ&\       ,o\&|}6| &/'
-               \?$.:?ooo/*""'                       `\$$b_   |\9|/|?:./'
-                `"""'  `'                              `~?&qo:?:',p#/'
-                                                          "^~<:>/"                        -->
+<!-- Left Slide 1 -->
+
+<div id="boxOuter">
+<div id="boxHead">Gelrii</div>
+<div id="box">
+<div id="boxContent">
+<p>Welcome to my website.</p><p>From here you can find information about me along with contact details.</p></div>  
+<div id="ButtonNext" onclick="next()">Information.</div>
+</div></div>
+
+<!-- Left Slide 2 -->
+
+<div id="boxOuter">
+<div id="boxHead">Information</div>
+<div id="box">
+<div id="boxContent">
+<p>James Scott Morgan</p><p>Born 14th May 1993</p><p>Interested in Engineering, Mountaineering and Security.</p></div> 
+<div id="ButtonNext" onclick="next()">Contact Details.</div>
+<div id="ButtonPrev" onclick="prev()"></div>
+</div></div>
+
+<!-- Left Slide 3 -->
+
+<div id="boxOuter">
+<div id="boxHead">Contact</div>
+<div id="box">
+<div id="boxContent">
+<p><b>Email:</b> jsmorgan1993@gmail.com</p><p><b>Phone:</b> 07757 782 352</p>
+<p><b>Address:</b> 10 Humber Street, Chopwell</p><p>Newcastle Upon Tyne, NE17 7DQ</p></div>  
+<div id="ButtonNext" onclick="next()">More Information.</div>
+<div id="ButtonPrev" onclick="prev()"></div>
+</div></div>
+
+<!-- Left Slide 4 -->
+
+<div id="boxOuter">
+<div id="boxHead">Information</div>
+<div id="box">
+<div id="boxContent">
+<p>I am an avid Linux user and lockpicker.</p>
+<p>I am also looking forward to eventually building my own metal foundry, melting and casting recycled aluminium.</p></div>
+<div id="ButtonPrev" onclick="prev()"></div>
+</div></div>
+
+<!-- Left Slide 5 
+
+<div id="boxOuter">
+<div id="boxHead">Slide 5</div>
+<div id="box">
+<div id="boxContent">
+<p>Left Box 5</p></div>
+<div id="ButtonNext" onclick="next()">Slide 6</div>
+<div id="ButtonPrev" onclick="prev()">
+</div></div></div>
+
+<!-- Left Slide 6 
+
+<div id="boxOuter">
+<div id="boxHead">Slide 6</div>
+<div id="box">
+<div id="boxContent">
+<p>Left Box 6</p></div>   
+<div id="ButtonNext" onclick="next()">Slide 7</div>
+<div id="ButtonPrev" onclick="prev()">
+</div></div></div>
+
+<!-- Left Slide 7 
+
+<div id="boxOuter">
+<div id="boxHead">Slide 7</div>
+<div id="box">
+<div id="boxContent">
+<p>Left Box 7</p></div>
+<div id="ButtonPrev" onclick="prev()">
+</div></div></div>
+
+<!-- End Slide -->
+
+</div></div>
+<div id="SlideFrameRight"> 
+<div id="SlideRight" style="top:-4800px;">
+
+<!-- Right Slide 7 -->
+ 
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="boxContent">
+</div></div>
+ 
+<!-- Right Slide 6 -->
+ 
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="boxContent">
+</div></div>
+ 
+<!-- Right Slide 5 -->
+ 
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="boxContent">
+</div></div>
+ 
+<!-- Right Slide 4 --> 
+ 
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="box">
+<div id="boxContent">
+<p>Check out my <a href=https://github.com/gelrii>GitHub</a>, I make quite a few bash scripts that might be of use to you.</p></div>
+</div></div> 
+
+<!-- Right Slide 3 --> 
+
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="box">
+<div id="boxContent">
+<p>My preffered method of communication is via email, if you wish you can use my <a href="https://pgp.mit.edu/pks/lookup?op=get&search=0x4F48F75077E4FCF4">public PGP key</a> to secure the conversation.</p></div>  
+</div></div>
+
+<!-- Right Slide 2 --> 
+
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="box">
+<div id="boxContent">
+<p>If you want more information, please check out my <a href=http://gelrii.github.io/construction>CV</a>.</p></div> 
+</div></div>
+ 
+<!-- Right Slide 1 --> 
+
+<div id="boxOuter">
+<div id="boxHead"></div>
+<div id="boxContent">
+</div></div>
+
+<!-- Start Slide --> 
+ 
+</div></div></div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+<script>
+var left = 0, right = 4800;
+document.getElementById("SlideRight").style.top = "0px";
+document.getElementById("SlideFrameLeft").scrollTop = left;
+document.getElementById("SlideFrameRight").scrollTop = right;
+function next(){	
+	left += 800;
+	right -= 800;
+	$("#SlideFrameLeft").animate({scrollTop: left}, 800);
+	$("#SlideFrameRight").animate({scrollTop: right}, 800);
+}
+function prev(){	
+	left -= 800;
+	right += 800;
+	$("#SlideFrameLeft").animate({scrollTop: left}, 800);
+	$("#SlideFrameRight").animate({scrollTop: right}, 800);	
+}
+</script>
+</html>
